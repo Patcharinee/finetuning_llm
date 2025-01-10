@@ -213,18 +213,18 @@ trainer.save_model(save_dir)
 print("Saved model to:", save_dir)
 
 # Load the trained model from local directory ###
-finetuned_slightly_model = AutoModelForCausalLM.from_pretrained(save_dir, local_files_only=True) 
+finetuned_model = AutoModelForCausalLM.from_pretrained(save_dir, local_files_only=True) 
 # local_files_only = True means get the model from local directory not from Huggingface
 
 # put the trained model on the device
-finetuned_slightly_model.to(device) 
+finetuned_model.to(device) 
 
 ### Try to run the trained model on a test question to see whether it performs better ###
 test_question = test_dataset[0]['question']
 print("Question input (test):", test_question)
 
-print("Finetuned slightly model's answer: ")
-print(inference(test_question, finetuned_slightly_model, tokenizer))
+print("Finetuned model's answer: ")
+print(inference(test_question, finetuned_model, tokenizer))
 
 test_answer = test_dataset[0]['answer']
 print("Target answer output (test):", test_answer)
