@@ -1,0 +1,7 @@
+question,answer
+What is pyATS?,"Python Automated Test Systems, or pyATS"
+What programming language is pyATS built on?,Python
+What is Robot Framework?,An open-source test automation framework that allows you to use English-like keywords to define testcases.
+What is the primary function of the memory management unit (MMU) in a computer system?,"The MMU translates virtual addresses to physical addresses, allowing the operating system to manage memory efficiently."
+What is the purpose of the bus protocol in computer architecture?,The bus protocol allows different components of a computer system to communicate with each other through a shared communication medium.
+"What is SD-WAN, and how does it address WAN network challenges?","SD-WAN (Software-Defined Wide Area Network) is a technology that enables centralized management of WAN networks. It addresses challenges such as traffic optimization, security, and scalability by providing a software-defined approach to managing WAN connections."
