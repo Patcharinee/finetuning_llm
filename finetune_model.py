@@ -11,7 +11,15 @@ from transformers import Trainer
 from datasets import load_dataset
 import datetime
 
-logger = logging.getLogger(__name__) ### still have some problem with logger ?
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+# Set to display logging messages on console
+streamhandler = logging.StreamHandler()
+streamhandler.setFormatter(
+    logging.Formatter("%(asctime)s [%(levelname)s]  %(message)s")
+)
+logger.addHandler(streamhandler)
 
 # Load environment variables
 load_dotenv()
@@ -135,7 +143,8 @@ def inference(text, model, tokenizer, max_input_tokens=max_in_tokens, max_output
 ### Setup training/finetuning ###
 # max number of training steps == max number of batches of training data that we will run on the model
 # step = batch of training data 
-max_steps = len(train_dataset)
+#max_steps = len(train_dataset)
+max_steps = 10
 x = datetime.datetime.now()
 time = f"{x.strftime("%Y%m%d")}_{x.strftime("%H%M%S")}"
 trained_model_name = f"PyATS_{model_name}_{max_steps}_steps_{time}"  # name includes number of steps date time
